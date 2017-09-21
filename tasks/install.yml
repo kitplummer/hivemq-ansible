@@ -1,8 +1,8 @@
 ---
 
-- name: Install JRE
+- name: Install python-pip
   package:
-    name: "{{ jre_package }}"
+    name: python-pip
 
 - name: Install pip packages
   pip:
@@ -29,7 +29,6 @@
   user:
     name: "{{ hivemq_user }}"
     group: "{{ hivemq_group }}"
-    shell: /sbin/nologin
     system: yes
 
 - name: Download archive
@@ -77,4 +76,3 @@
 
 
 - meta: flush_handlers
-

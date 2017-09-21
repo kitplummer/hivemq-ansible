@@ -27,7 +27,7 @@
   register: config_file
 
 - name: Initial S3 Sync
-  include: s3-sync.yml
+  include_tasks: s3-sync.yml
   vars:
     hivemq_config_refresh: true
   when: (not config_file.stat.exists) and configs_from_s3

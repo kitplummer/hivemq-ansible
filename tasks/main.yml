@@ -15,8 +15,10 @@
   tags:
     - configure
 
+- supervisorctl:
+    name: hivemq
+    state: started
+
 - name: Ensure for HiveMQ is started
   wait_for:
-    host: "{{ ansible_ssh_host | default(inventory_hostname) }}"
     port: "{{ hivemq_port }}"
-    state: started
